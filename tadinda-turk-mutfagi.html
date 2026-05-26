@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tadında Türk Mutfağı – Geleneksel Anadolu Lezzetleri | Beylikdüzü İstanbul</title>
+  <meta name="description" content="Beylikdüzü'nün kalbinde, Şef Zübeyda'nın el yapımı Anadolu tarifleriyle hazırlanan otantik Türk yemekleri. Turkish Restaurant Beylikdüzü, Traditional Turkish Cuisine Istanbul." />
+  <meta name="keywords" content="Turkish Restaurant Beylikdüzü, Traditional Turkish Cuisine, Anatolian Food Istanbul, Homemade Turkish Dishes, Turkish Restaurant Near Beylikdüzü, Türk Mutfağı, Beylikdüzü Restaurant" />
+  <meta property="og:title" content="Tadında Türk Mutfağı – Authentic Turkish Flavors" />
+  <meta property="og:description" content="Experience traditional Anatolian recipes crafted by Chef Zübeyda in the heart of Beylikdüzü." />
+  <meta property="og:type" content="restaurant" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white: #fefcf8;
+      --cream: #f5ede0;
+      --beige: #e8d5be;
+      --warm-light: #f0e6d3;
+      --brown-soft: #c8a882;
+      --brown-mid: #a0784a;
+      --brown-dark: #6b4c2a;
+      --brown-deep: #3d2b14;
+      --text-main: #2a1f12;
+      --text-muted: #7a5e3e;
+      --gold: #c9933a;
+      --gold-light: #e8b96a;
+      --shadow-soft: 0 8px 40px rgba(100,60,20,0.10);
+      --shadow-card: 0 4px 24px rgba(100,60,20,0.13);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--white);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    /* ─── PATTERN OVERLAY ─── */
+    .pattern-overlay {
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8a882' fill-opacity='0.07'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3Ccircle cx='30' cy='30' r='8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ─── NAVBAR ─── */
+    #navbar {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 18px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(254,252,248,0.97);
+      box-shadow: 0 2px 24px rgba(100,60,20,0.10);
+      padding: 12px 48px;
+    }
+    .nav-logo {
+      display: flex; flex-direction: column; line-height: 1;
+    }
+    .nav-logo-top {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--brown-deep);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.62rem; font-weight: 400;
+      color: var(--brown-mid);
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem; font-weight: 400;
+      color: var(--brown-deep);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px;
+      background: var(--gold); transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--brown-deep); color: var(--cream) !important;
+      padding: 9px 22px; border-radius: 50px;
+      transition: background var(--transition), transform 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--gold) !important; transform: translateY(-1px); }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-hamburger span {
+      width: 24px; height: 2px; background: var(--brown-deep);
+      transition: var(--transition); display: block;
+    }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: var(--white);
+      z-index: 999; flex-direction: column; align-items: center; justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 500;
+      color: var(--brown-deep); text-decoration: none;
+      transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-close {
+      position: absolute; top: 24px; right: 32px;
+      font-size: 2rem; cursor: pointer; color: var(--brown-deep);
+      background: none; border: none;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative; height: 100vh; min-height: 640px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg, rgba(42,31,18,0.55) 0%, rgba(107,76,42,0.30) 50%, rgba(42,31,18,0.70) 100%),
+        url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=1800&q=80') center/cover no-repeat;
+      transform: scale(1.04);
+      transition: transform 8s ease-out;
+    }
+    #hero.loaded .hero-bg { transform: scale(1); }
+    .hero-content {
+      position: relative; z-index: 2; text-align: center;
+      max-width: 860px; padding: 0 24px;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem; font-weight: 400;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid rgba(201,147,58,0.45);
+      padding: 6px 18px; border-radius: 50px;
+      margin-bottom: 28px;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      font-weight: 300; line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 20px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 0.9s 0.55s forwards;
+    }
+    .hero-title em {
+      font-style: italic; color: var(--gold-light);
+    }
+    .hero-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.9rem, 2vw, 1.1rem); font-weight: 300;
+      color: rgba(245,237,224,0.88); line-height: 1.7;
+      max-width: 560px; margin: 0 auto 40px;
+      opacity: 0; transform: translateY(24px);
+      animation: fadeUp 0.9s 0.8s forwards;
+    }
+    .hero-btns {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.9s 1s forwards;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white); border: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.84rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 15px 34px; border-radius: 50px;
+      cursor: pointer; text-decoration: none;
+      transition: background var(--transition), transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(201,147,58,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--gold-light); transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,147,58,0.45);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white); border: 1.5px solid rgba(255,255,255,0.55);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.84rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 15px 34px; border-radius: 50px;
+      cursor: pointer; text-decoration: none;
+      transition: border-color var(--transition), background var(--transition), transform 0.2s;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold-light);
+      background: rgba(201,147,58,0.12);
+      transform: translateY(-2px);
+    }
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      z-index: 2; opacity: 0; animation: fadeUp 1s 1.4s forwards;
+    }
+    .hero-scroll span {
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(245,237,224,0.6);
+    }
+    .scroll-line {
+      width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(245,237,224,0.6), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    /* ─── SECTIONS GENERIC ─── */
+    section { position: relative; }
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem; font-weight: 400;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--brown-deep);
+    }
+    .section-title em { font-style: italic; color: var(--brown-mid); }
+    .section-divider {
+      width: 48px; height: 2px; background: var(--gold);
+      margin: 18px 0 24px;
+    }
+    .section-divider.center { margin: 18px auto 24px; }
+    .section-body {
+      font-size: 1rem; font-weight: 300; line-height: 1.85;
+      color: var(--text-muted); max-width: 560px;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 110px 48px;
+      background: var(--white);
+    }
+    .about-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-imgs {
+      position: relative; height: 520px;
+    }
+    .about-img-main {
+      position: absolute; left: 0; top: 0;
+      width: 75%; height: 88%;
+      border-radius: var(--radius);
+      object-fit: cover;
+      box-shadow: var(--shadow-card);
+    }
+    .about-img-accent {
+      position: absolute; right: 0; bottom: 0;
+      width: 52%; height: 52%;
+      border-radius: var(--radius);
+      object-fit: cover;
+      box-shadow: var(--shadow-card);
+      border: 4px solid var(--white);
+    }
+    .about-badge {
+      position: absolute; left: -24px; bottom: 80px;
+      background: var(--brown-deep); color: var(--cream);
+      padding: 20px 24px; border-radius: var(--radius-sm);
+      text-align: center; z-index: 3;
+      box-shadow: var(--shadow-soft);
+    }
+    .about-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; font-weight: 600; line-height: 1;
+      color: var(--gold-light);
+    }
+    .about-badge-txt {
+      font-size: 0.72rem; font-weight: 300;
+      letter-spacing: 0.08em; margin-top: 4px;
+    }
+    .about-text { padding-top: 12px; }
+    .about-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic;
+      color: var(--brown-mid); line-height: 1.6;
+      margin: 24px 0 28px;
+      padding-left: 20px;
+      border-left: 2px solid var(--gold);
+    }
+    .about-features {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;
+    }
+    .about-feature-pill {
+      background: var(--cream); color: var(--brown-dark);
+      padding: 8px 18px; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── DISHES ─── */
+    #dishes {
+      padding: 110px 48px;
+      background: var(--cream);
+    }
+    .dishes-pattern { background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c8a882' fill-opacity='0.06'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z'/%3E%3C/g%3E%3C/svg%3E"); }
+    .dishes-header { text-align: center; margin-bottom: 60px; }
+    .dishes-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .dish-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: default;
+    }
+    .dish-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(100,60,20,0.18);
+    }
+    .dish-img-wrap {
+      position: relative; overflow: hidden;
+      height: 240px;
+    }
+    .dish-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .dish-card:hover .dish-img-wrap img { transform: scale(1.08); }
+    .dish-tag {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 50px;
+    }
+    .dish-body { padding: 24px 26px 28px; }
+    .dish-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 500;
+      color: var(--brown-deep); margin-bottom: 10px;
+    }
+    .dish-desc {
+      font-size: 0.88rem; font-weight: 300;
+      line-height: 1.75; color: var(--text-muted);
+    }
+    .dish-line {
+      width: 32px; height: 1.5px;
+      background: var(--gold); margin-top: 16px;
+      transition: width var(--transition);
+    }
+    .dish-card:hover .dish-line { width: 64px; }
+
+    /* ─── ATMOSPHERE ─── */
+    #atmosphere {
+      padding: 110px 48px;
+      background: var(--white);
+    }
+    .atm-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+    .atm-features {
+      display: flex; flex-direction: column; gap: 22px; margin-top: 32px;
+    }
+    .atm-feature {
+      display: flex; align-items: flex-start; gap: 18px;
+    }
+    .atm-icon {
+      width: 46px; height: 46px; flex-shrink: 0;
+      background: var(--cream); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .atm-feature-txt h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 500;
+      color: var(--brown-deep); margin-bottom: 4px;
+    }
+    .atm-feature-txt p {
+      font-size: 0.86rem; font-weight: 300;
+      color: var(--text-muted); line-height: 1.6;
+    }
+    .atm-gallery {
+      display: grid; grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr; gap: 14px;
+      height: 520px;
+    }
+    .atm-gallery-item {
+      border-radius: var(--radius-sm); overflow: hidden;
+      position: relative;
+    }
+    .atm-gallery-item:first-child {
+      grid-row: span 2;
+    }
+    .atm-gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .atm-gallery-item:hover img { transform: scale(1.07); }
+
+    /* ─── SERVICES ─── */
+    #services {
+      padding: 100px 48px;
+      background: var(--brown-deep);
+      position: relative;
+    }
+    #services .pattern-overlay { opacity: 0.4; }
+    .services-header { text-align: center; margin-bottom: 56px; }
+    .services-header .section-title { color: var(--cream); }
+    .services-header .section-label { color: var(--gold-light); }
+    .services-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .service-card {
+      background: rgba(254,252,248,0.06);
+      border: 1px solid rgba(201,147,58,0.2);
+      border-radius: var(--radius); padding: 36px 28px;
+      text-align: center;
+      transition: background var(--transition), transform var(--transition), border-color var(--transition);
+    }
+    .service-card:hover {
+      background: rgba(201,147,58,0.12);
+      border-color: rgba(201,147,58,0.55);
+      transform: translateY(-4px);
+    }
+    .service-icon {
+      font-size: 2.4rem; margin-bottom: 16px; display: block;
+    }
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 500;
+      color: var(--cream); margin-bottom: 8px;
+    }
+    .service-desc {
+      font-size: 0.82rem; font-weight: 300;
+      color: rgba(232,213,190,0.7); line-height: 1.6;
+    }
+
+    /* ─── REVIEWS ─── */
+    #reviews {
+      padding: 110px 48px;
+      background: var(--warm-light);
+    }
+    .reviews-header { text-align: center; margin-bottom: 16px; }
+    .rating-display {
+      text-align: center; margin-bottom: 56px;
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+    }
+    .rating-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem; font-weight: 600; line-height: 1;
+      color: var(--brown-deep);
+    }
+    .rating-stars { font-size: 1.4rem; color: var(--gold); }
+    .rating-count {
+      font-size: 0.8rem; color: var(--text-muted);
+      font-weight: 300; letter-spacing: 0.06em;
+    }
+    .reviews-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .review-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px 30px;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--transition);
+    }
+    .review-card:hover { transform: translateY(-4px); }
+    .review-quote-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem; line-height: 0.6;
+      color: var(--gold-light); display: block; margin-bottom: 18px;
+    }
+    .review-text {
+      font-size: 0.92rem; font-weight: 300;
+      font-style: italic;
+      line-height: 1.8; color: var(--text-main);
+      margin-bottom: 24px;
+    }
+    .review-author {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .review-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--beige);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; color: var(--brown-dark);
+      flex-shrink: 0;
+    }
+    .review-author-name {
+      font-weight: 500; font-size: 0.88rem; color: var(--brown-deep);
+    }
+    .review-author-sub {
+      font-size: 0.75rem; color: var(--text-muted); font-weight: 300;
+    }
+    .review-stars { font-size: 0.8rem; color: var(--gold); margin-top: 2px; }
+
+    /* ─── RESERVATION ─── */
+    #reservation {
+      padding: 110px 48px;
+      background: var(--white);
+    }
+    .reservation-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+    .res-form-wrap {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+    }
+    .res-form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 400;
+      color: var(--brown-deep); margin-bottom: 32px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block; font-size: 0.74rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--brown-mid); margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 13px 16px;
+      background: var(--white); border: 1.5px solid var(--beige);
+      border-radius: var(--radius-sm);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem; font-weight: 300;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; padding: 15px;
+      background: var(--brown-deep); color: var(--cream);
+      border: none; border-radius: 50px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.86rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.2s;
+      margin-top: 6px;
+    }
+    .form-submit:hover { background: var(--gold); transform: translateY(-1px); }
+    .form-note {
+      text-align: center; margin-top: 14px;
+      font-size: 0.76rem; color: var(--text-muted); font-weight: 300;
+    }
+    .res-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 400; color: var(--brown-deep);
+      margin-bottom: 24px;
+    }
+    .res-info p {
+      font-size: 0.9rem; font-weight: 300;
+      color: var(--text-muted); line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .info-items { display: flex; flex-direction: column; gap: 20px; }
+    .info-item {
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .info-item-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: var(--cream); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .info-item h4 {
+      font-size: 0.84rem; font-weight: 500;
+      color: var(--brown-deep); margin-bottom: 3px;
+      letter-spacing: 0.04em;
+    }
+    .info-item p {
+      font-size: 0.82rem; color: var(--text-muted);
+      font-weight: 300; line-height: 1.5; margin: 0;
+    }
+
+    /* ─── LOCATION ─── */
+    #location {
+      padding: 110px 48px;
+      background: var(--cream);
+    }
+    .location-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start;
+    }
+    .location-details { padding-top: 10px; }
+    .location-address-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px 30px; margin-top: 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .hours-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px;
+      margin-top: 16px;
+    }
+    .hours-item {
+      display: flex; justify-content: space-between;
+      font-size: 0.85rem; padding: 7px 0;
+      border-bottom: 1px solid var(--beige);
+      color: var(--text-main);
+    }
+    .hours-item span:last-child { color: var(--brown-mid); font-weight: 300; }
+    .location-nearby {
+      margin-top: 20px; font-size: 0.82rem; color: var(--text-muted);
+      font-weight: 300; line-height: 1.6;
+    }
+    .location-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    .btn-dark {
+      background: var(--brown-deep); color: var(--cream);
+      padding: 12px 26px; border-radius: 50px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background var(--transition), transform 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-dark:hover { background: var(--gold); transform: translateY(-1px); }
+    .map-embed {
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow-card); height: 480px;
+      position: relative;
+    }
+    .map-embed iframe {
+      width: 100%; height: 100%; border: none;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--brown-deep); color: var(--cream);
+      padding: 72px 48px 32px;
+    }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(232,213,190,0.15);
+    }
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 500;
+      color: var(--cream); margin-bottom: 14px;
+    }
+    .footer-brand-desc {
+      font-size: 0.85rem; font-weight: 300;
+      color: rgba(232,213,190,0.65); line-height: 1.8;
+      margin-bottom: 24px; max-width: 280px;
+    }
+    .footer-social {
+      display: flex; gap: 12px;
+    }
+    .footer-social a {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid rgba(201,147,58,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; text-decoration: none; color: var(--gold-light);
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .footer-social a:hover {
+      background: rgba(201,147,58,0.18); border-color: var(--gold-light);
+    }
+    .footer-col h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 500;
+      color: var(--cream); margin-bottom: 20px;
+      padding-bottom: 8px; border-bottom: 1px solid rgba(232,213,190,0.15);
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      color: rgba(232,213,190,0.65); text-decoration: none;
+      font-size: 0.84rem; font-weight: 300;
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--gold-light); }
+    .footer-col p {
+      color: rgba(232,213,190,0.65);
+      font-size: 0.84rem; font-weight: 300; line-height: 1.8;
+    }
+    .footer-bottom {
+      max-width: 1200px; margin: 28px auto 0;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.76rem; color: rgba(232,213,190,0.4);
+      font-weight: 300;
+    }
+
+    /* ─── WHATSAPP BUTTON ─── */
+    #wa-btn {
+      position: fixed; bottom: 28px; right: 28px; z-index: 900;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      text-decoration: none; font-size: 1.8rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    #wa-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+    }
+    #wa-btn .wa-tooltip {
+      position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+      background: var(--brown-deep); color: var(--cream);
+      font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400;
+      white-space: nowrap; padding: 7px 14px; border-radius: 6px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    #wa-btn:hover .wa-tooltip { opacity: 1; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.6; } 50% { opacity: 1; }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-left {
+      opacity: 0; transform: translateX(-32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: none; }
+    .reveal-right {
+      opacity: 0; transform: translateX(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    /* ─── SUCCESS MESSAGE ─── */
+    .form-success {
+      display: none; text-align: center; padding: 32px;
+      color: var(--brown-deep);
+    }
+    .form-success .check { font-size: 3rem; }
+    .form-success h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; margin: 12px 0 8px;
+    }
+    .form-success p { font-size: 0.9rem; color: var(--text-muted); font-weight: 300; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .about-inner, .atm-inner, .reservation-inner, .location-inner {
+        grid-template-columns: 1fr; gap: 48px;
+      }
+      .about-imgs { height: 360px; }
+      .about-badge { left: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      #navbar { padding: 16px 24px; }
+      #navbar.scrolled { padding: 12px 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      section, #about, #dishes, #atmosphere, #services, #reviews, #reservation, #location {
+        padding: 72px 24px;
+      }
+      .hero-title { font-size: 2.2rem; }
+      .dishes-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .atm-gallery { height: 360px; }
+      .map-embed { height: 320px; }
+      .res-form-wrap { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="nav-logo-top">Tadında</span>
+      <span class="nav-logo-sub">Türk Mutfağı</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">Hakkımızda</a></li>
+      <li><a href="#dishes">Menü</a></li>
+      <li><a href="#atmosphere">Atmosfer</a></li>
+      <li><a href="#reviews">Yorumlar</a></li>
+      <li><a href="#location">Konum</a></li>
+      <li><a href="#reservation" class="nav-cta">Rezervasyon</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <a href="#about" onclick="closeMobile()">Hakkımızda</a>
+    <a href="#dishes" onclick="closeMobile()">Menü</a>
+    <a href="#atmosphere" onclick="closeMobile()">Atmosfer</a>
+    <a href="#reviews" onclick="closeMobile()">Yorumlar</a>
+    <a href="#location" onclick="closeMobile()">Konum</a>
+    <a href="#reservation" onclick="closeMobile()">Rezervasyon</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="pattern-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✦ Beylikdüzü · İstanbul · Türkiye</div>
+      <h1 class="hero-title">
+        Authentic Turkish Flavors,<br>
+        <em>Served with Home-Style Warmth</em>
+      </h1>
+      <p class="hero-sub">Experience traditional Anatolian recipes crafted by Chef Zübeyda in the heart of Beylikdüzü.</p>
+      <div class="hero-btns">
+        <a href="#dishes" class="btn-primary">View Menu</a>
+        <a href="#reservation" class="btn-outline">Reserve a Table</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-imgs reveal-left">
+        <img class="about-img-main" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80" alt="Tadında Türk Mutfağı interior" loading="lazy" />
+        <img class="about-img-accent" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Traditional Turkish food" loading="lazy" />
+        <div class="about-badge">
+          <div class="about-badge-num">10+</div>
+          <div class="about-badge-txt">Yıllık Deneyim</div>
+        </div>
+      </div>
+      <div class="about-text reveal-right">
+        <div class="section-label">Hikayemiz</div>
+        <h2 class="section-title">Anadolu'nun <em>Sıcaklığını</em><br>Sofranıza Taşıyoruz</h2>
+        <div class="section-divider"></div>
+        <p class="section-body">
+          Tadında Türk Mutfağı, geleneksel Anadolu lezzetlerini modern bir çevrede buluşturmak için kuruldu. Şef Zübeyda'nın elleriyle hazırlanan her yemek, yılların birikimini ve aileden geçen tariflerin sıcaklığını taşımaktadır.
+        </p>
+        <blockquote class="about-quote">
+          "Her tabak, Anadolu'nun binlerce yıllık mutfak kültürünün bir yansımasıdır. Evde pişirilmiş yemeğin samimiyetini misafirlerimize sunmak en büyük mutluluğumuzdur."
+          <br><br><strong style="font-family:'Jost',sans-serif;font-size:0.8rem;font-style:normal;letter-spacing:0.08em;color:var(--brown-mid);">— Şef Zübeyda</strong>
+        </blockquote>
+        <p class="section-body" style="margin-top:0">
+          Beylikdüzü'nün kalbinde, temiz ve modern iç mekânımızda aile dostu bir atmosfer içinde otantik bölgesel lezzetleri keşfedebilirsiniz.
+        </p>
+        <div class="about-features">
+          <span class="about-feature-pill">🏡 Ev Sıcaklığı</span>
+          <span class="about-feature-pill">👩‍🍳 Şef Zübeyda</span>
+          <span class="about-feature-pill">🌿 Taze Malzemeler</span>
+          <span class="about-feature-pill">🍽️ Aile Dostu</span>
+          <span class="about-feature-pill">✨ Modern İç Mekan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISHES -->
+  <section id="dishes">
+    <div class="pattern-overlay dishes-pattern"></div>
+    <div class="dishes-header reveal">
+      <div class="section-label">İmza Yemeklerimiz</div>
+      <h2 class="section-title">Şef Zübeyda'nın <em>Özel Tarifleri</em></h2>
+      <div class="section-divider center"></div>
+      <p class="section-body" style="margin:0 auto;text-align:center">Her tabak, geleneksel Anadolu mutfağının özüyle ve taze malzemelerle hazırlanmaktadır.</p>
+    </div>
+    <div class="dishes-grid">
+
+      <div class="dish-card reveal" style="transition-delay:0.1s">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80" alt="Tencere Köftesi" loading="lazy" />
+          <span class="dish-tag">Özel Tarif</span>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Tencere Köftesi</h3>
+          <p class="dish-desc">Geleneksel yöntemle pişirilen, baharatlı köfte ve sebzelerin bütünleştiği, tencerenin sıcaklığında olgunlaşmış derin lezzetli bir ana yemek.</p>
+          <div class="dish-line"></div>
+        </div>
+      </div>
+
+      <div class="dish-card reveal" style="transition-delay:0.2s">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&q=80" alt="Lor Dolması" loading="lazy" />
+          <span class="dish-tag">Ev Yapımı</span>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Lor Dolması</h3>
+          <p class="dish-desc">Taze lor peyniri ve aromatik otlarla hazırlanan, zarif biberlerle sarılmış, Anadolu'nun nazik dokusunu yansıtan geleneksel bir lezzet.</p>
+          <div class="dish-line"></div>
+        </div>
+      </div>
+
+      <div class="dish-card reveal" style="transition-delay:0.3s">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565299715199-866c917206bb?w=600&q=80" alt="Yağlama" loading="lazy" />
+          <span class="dish-tag">Geleneksel</span>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Yağlama</h3>
+          <p class="dish-desc">Sıcak sacda pişirilen, tereyağıyla buluşan ince hamur sayfalarından oluşan, Anadolu'nun simge lezzetlerinden biri olan kadim bir tarif.</p>
+          <div class="dish-line"></div>
+        </div>
+      </div>
+
+      <div class="dish-card reveal" style="transition-delay:0.4s">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Aş Otlu Çorba" loading="lazy" />
+          <span class="dish-tag">Şef Önerisi</span>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Aş Otlu Çorba</h3>
+          <p class="dish-desc">Taze aş otu, mercimek ve yerel baharatların uyumuyla hazırlanan, Doğu Anadolu'nun sıcaklığını soğuk günlere taşıyan nefis bir çorba.</p>
+          <div class="dish-line"></div>
+        </div>
+      </div>
+
+      <div class="dish-card reveal" style="transition-delay:0.5s">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80" alt="Süt Helvası" loading="lazy" />
+          <span class="dish-tag">Tatlı</span>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Süt Helvası</h3>
+          <p class="dish-desc">Taze sütün ve un helvasının buluşmasıyla oluşan, kadifemsi doku ve narin tatlılığıyla sizi geçmişin sıcak mutfaklarına götüren geleneksel bir lezzet.</p>
+          <div class="dish-line"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ATMOSPHERE -->
+  <section id="atmosphere">
+    <div class="atm-inner">
+      <div class="reveal-left">
+        <div class="section-label">Mekânımız</div>
+        <h2 class="section-title">Huzurlu Bir <em>Yemek Deneyimi</em></h2>
+        <div class="section-divider"></div>
+        <p class="section-body">Beyaz ve modern iç mekânımız, geleneksel Türk misafirperverliğini çağdaş bir estetikle buluşturuyor. Her köşe özenle tasarlandı.</p>
+        <div class="atm-features">
+          <div class="atm-feature">
+            <div class="atm-icon">🪑</div>
+            <div class="atm-feature-txt">
+              <h4>İç & Dış Mekan</h4>
+              <p>Geniş iç mekân ve ferah dış oturma alanlarımızla her mevsim keyifli bir deneyim sunuyoruz.</p>
+            </div>
+          </div>
+          <div class="atm-feature">
+            <div class="atm-icon">♿</div>
+            <div class="atm-feature-txt">
+              <h4>Engelsiz Erişim</h4>
+              <p>Tekerlekli sandalye erişimine uygun mekânımız, tüm misafirlerimize konforlu bir ortam sağlar.</p>
+            </div>
+          </div>
+          <div class="atm-feature">
+            <div class="atm-icon">👨‍👩‍👧</div>
+            <div class="atm-feature-txt">
+              <h4>Aile Dostu Ortam</h4>
+              <p>Her yaştan misafiri sıcaklıkla karşılıyoruz. Çocuklar için özel ikramlarımız mevcut.</p>
+            </div>
+          </div>
+          <div class="atm-feature">
+            <div class="atm-icon">🎵</div>
+            <div class="atm-feature-txt">
+              <h4>Türk Müziği Ambiyansı</h4>
+              <p>Keyifli Türk müziği eşliğinde yemeğinizin tadını çıkarırken ruhunuzu dinlendirin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="atm-gallery reveal-right">
+        <div class="atm-gallery-item">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Restaurant interior" loading="lazy" />
+        </div>
+        <div class="atm-gallery-item">
+          <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=500&q=80" alt="Restaurant ambiance" loading="lazy" />
+        </div>
+        <div class="atm-gallery-item">
+          <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=500&q=80" alt="Turkish tea service" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="pattern-overlay"></div>
+    <div class="services-header reveal">
+      <div class="section-label">Hizmetlerimiz</div>
+      <h2 class="section-title" style="color:var(--cream)">Size <em style="color:var(--gold-light)">Her Anda</em> Yanınızdayız</h2>
+      <div class="section-divider center" style="background:var(--gold);"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal" style="transition-delay:0.1s">
+        <span class="service-icon">🍽️</span>
+        <div class="service-name">Restoranda Yemek</div>
+        <p class="service-desc">Sıcak ve samimi atmosferimizde, taze hazırlanan yemeklerimizle masanızda ağırlıyoruz.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.15s">
+        <span class="service-icon">🛍️</span>
+        <div class="service-name">Paket Servis</div>
+        <p class="service-desc">Lezzetli yemeklerimizi dilediğiniz gibi paket olarak sipariş edin, evinizde tadını çıkarın.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.2s">
+        <span class="service-icon">🚗</span>
+        <div class="service-name">Teslimat</div>
+        <p class="service-desc">Beylikdüzü bölgesine sıcak ve hızlı teslimat seçeneğimizle kapınıza kadar getiriyoruz.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.25s">
+        <span class="service-icon">🎉</span>
+        <div class="service-name">Catering</div>
+        <p class="service-desc">Düğün, nişan, toplantı ve özel etkinlikleriniz için lezzetli ikram çözümleri sunuyoruz.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.3s">
+        <span class="service-icon">🅿️</span>
+        <div class="service-name">Ücretsiz Otopark</div>
+        <p class="service-desc">Misafirlerimiz için geniş ve güvenli ücretsiz otopark alanımız mevcuttur.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.35s">
+        <span class="service-icon">📶</span>
+        <div class="service-name">Ücretsiz Wi-Fi</div>
+        <p class="service-desc">Yüksek hızlı ücretsiz internet bağlantısıyla çalışmak ya da sosyal medya paylaşımı yapabilirsiniz.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="reviews-header reveal">
+      <div class="section-label">Müşteri Yorumları</div>
+      <h2 class="section-title">Misafirlerimiz <em>Ne Diyor?</em></h2>
+      <div class="section-divider center"></div>
+    </div>
+    <div class="rating-display reveal">
+      <span class="rating-num">4.8</span>
+      <div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">Google Yorumları Ortalaması</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal" style="transition-delay:0.1s">
+        <span class="review-quote-icon">"</span>
+        <p class="review-text">Lezzetler bana gerçek ev yapımı Türk mutfağını hatırlattı. Her şey sıcak, taze ve güzel sunulmuştu. Şef Zübeyda'nın dokunuşu her lokmada hissediliyor. Kesinlikle tekrar geleceğiz.</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-author-name">Ayşe Kara</div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author-sub">Google Yorumu</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:0.2s">
+        <span class="review-quote-icon">"</span>
+        <p class="review-text">Lor dolması ve aş otlu çorba muhteşemdi. Mekân temiz, personel güler yüzlü ve yemekler gerçekten otantik. İstanbul'da bu kadar samimi bir Türk mutfağı bulmak çok zor.</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-author-name">Mehmet Yıldız</div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author-sub">Google Yorumu</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:0.3s">
+        <span class="review-quote-icon">"</span>
+        <p class="review-text">Aile yemeği için tercih ettik, hepimiz çok memnun kaldık. Çocuklar da dahil herkes sevdi. Süt helvası başka bir dünyaydı. Fiyat-kalite dengesi de mükemmel.</p>
+        <div class="review-author">
+          <div class="review-avatar">F</div>
+          <div>
+            <div class="review-author-name">Fatma Demir</div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-author-sub">Google Yorumu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION -->
+  <section id="reservation">
+    <div class="reservation-inner">
+      <div class="reveal-left">
+        <div class="res-form-wrap">
+          <h3 class="res-form-title">Masa Rezervasyonu</h3>
+          <div id="res-form-container">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Ad Soyad</label>
+                <input type="text" placeholder="Adınız" />
+              </div>
+              <div class="form-group">
+                <label>Telefon</label>
+                <input type="tel" placeholder="05__ ___ __ __" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Tarih</label>
+                <input type="date" />
+              </div>
+              <div class="form-group">
+                <label>Saat</label>
+                <input type="time" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Kişi Sayısı</label>
+              <select>
+                <option>1 Kişi</option>
+                <option>2 Kişi</option>
+                <option selected>3–4 Kişi</option>
+                <option>5–6 Kişi</option>
+                <option>7+ Kişi</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Özel İstek (İsteğe bağlı)</label>
+              <textarea placeholder="Özel gün, diyet kısıtlaması veya notunuz..."></textarea>
+            </div>
+            <button class="form-submit" onclick="submitForm()">Rezervasyon Talebi Gönder</button>
+            <p class="form-note">📞 Onay için sizi arayacağız · 0544 761 25 06</p>
+          </div>
+          <div class="form-success" id="form-success">
+            <div class="check">✅</div>
+            <h3>Talebiniz Alındı!</h3>
+            <p>En kısa sürede <strong>0544 761 25 06</strong> numarasından sizi arayarak rezervasyonunuzu onaylayacağız.</p>
+          </div>
+        </div>
+      </div>
+      <div class="res-info reveal-right">
+        <div class="section-label">İletişim & Bilgi</div>
+        <h3>Sizi Ağırlamaktan<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--brown-mid)">Mutluluk Duyarız</em></h3>
+        <p>Özel günleriniz, iş yemekleriniz veya aile buluşmalarınız için bize ulaşın. WhatsApp üzerinden de anlık destek alabilirsiniz.</p>
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-item-icon">📍</div>
+            <div>
+              <h4>Adres</h4>
+              <p>DORA EVLERİ A BLOK, Adnan Kahveci, Buse Sk. NO:5 A D:9<br>34528 Beylikdüzü / İstanbul</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-icon">📞</div>
+            <div>
+              <h4>Telefon</h4>
+              <p><a href="tel:05447612506" style="color:var(--gold);text-decoration:none">0544 761 25 06</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-icon">🕐</div>
+            <div>
+              <h4>Çalışma Saatleri</h4>
+              <p>Pazartesi – Cumartesi: 10:00 – 22:00<br>Pazar: 11:00 – 21:00</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-icon">💬</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p><a href="https://wa.me/905447612506" target="_blank" style="color:var(--gold);text-decoration:none">Hemen Yazın →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="location-inner">
+      <div class="location-details reveal-left">
+        <div class="section-label">Bizi Bulun</div>
+        <h2 class="section-title">Beylikdüzü'nün <em>Kalbindeyiz</em></h2>
+        <div class="section-divider"></div>
+        <p class="section-body">Park Teras AVM ve Beylikdüzü Çarşamba Pazarı'na yakın konumumuzla kolayca ulaşabilirsiniz.</p>
+        <div class="location-address-card">
+          <div class="info-item" style="margin-bottom:16px">
+            <div class="info-item-icon">📍</div>
+            <div>
+              <h4>Adres</h4>
+              <p>DORA EVLERİ A BLOK, Adnan Kahveci, Buse Sk. NO:5 A D:9, 34528 Beylikdüzü / İstanbul</p>
+            </div>
+          </div>
+          <p class="location-nearby">📌 <strong>Park Teras AVM</strong> yakınında &nbsp;·&nbsp; 📌 <strong>Beylikdüzü Çarşamba Pazarı</strong>'na yürüme mesafesinde</p>
+          <div style="margin-top:20px">
+            <div style="font-size:0.74rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--brown-mid);margin-bottom:10px">Çalışma Saatleri</div>
+            <div class="hours-grid">
+              <div class="hours-item"><span>Pazartesi</span><span>10:00–22:00</span></div>
+              <div class="hours-item"><span>Salı</span><span>10:00–22:00</span></div>
+              <div class="hours-item"><span>Çarşamba</span><span>10:00–22:00</span></div>
+              <div class="hours-item"><span>Perşembe</span><span>10:00–22:00</span></div>
+              <div class="hours-item"><span>Cuma</span><span>10:00–22:00</span></div>
+              <div class="hours-item"><span>Cumartesi</span><span>10:00–22:00</span></div>
+              <div class="hours-item"><span>Pazar</span><span>11:00–21:00</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="location-btns">
+          <a href="https://maps.google.com/?q=DORA+EVLERI+Beylikduzu+Istanbul" target="_blank" class="btn-dark">🧭 Yol Tarifi Al</a>
+          <a href="tel:05447612506" class="btn-dark">📞 Ara</a>
+        </div>
+      </div>
+      <div class="map-embed reveal-right">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.3871!2d28.6450!3d40.9820!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBeylikd%C3%BCz%C3%BC%2C%20Istanbul!5e0!3m2!1str!2str!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Tadında Türk Mutfağı Konum">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Tadında Türk Mutfağı</div>
+        <p class="footer-brand-desc">Geleneksel Anadolu lezzetlerini modern bir ortamda, ev sıcaklığıyla sunan Beylikdüzü'nün en sevilen Türk restoranı.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/905447612506" aria-label="WhatsApp">💬</a>
+          <a href="#" aria-label="Facebook">👍</a>
+          <a href="#" aria-label="TripAdvisor">🌟</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Sayfalar</h5>
+        <ul>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="#dishes">Menü</a></li>
+          <li><a href="#atmosphere">Mekân</a></li>
+          <li><a href="#services">Hizmetler</a></li>
+          <li><a href="#reviews">Yorumlar</a></li>
+          <li><a href="#reservation">Rezervasyon</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Hizmetler</h5>
+        <ul>
+          <li><a href="#">Restoranda Yemek</a></li>
+          <li><a href="#">Paket Servis</a></li>
+          <li><a href="#">Teslimat</a></li>
+          <li><a href="#">Catering</a></li>
+          <li><a href="#">Özel Etkinlikler</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>İletişim</h5>
+        <p>Buse Sk. NO:5 A<br>Beylikdüzü, İstanbul<br><br>
+        <a href="tel:05447612506" style="color:var(--gold-light);text-decoration:none">0544 761 25 06</a><br><br>
+        Pzt–Cmt: 10:00–22:00<br>Pazar: 11:00–21:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Tadında Türk Mutfağı · Tüm hakları saklıdır.</span>
+      <span>Traditional Turkish Cuisine · Beylikdüzü · İstanbul</span>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP BUTTON -->
+  <a id="wa-btn" href="https://wa.me/905447612506?text=Merhaba%2C%20rezervasyon%20yapmak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <span class="wa-tooltip">WhatsApp ile Yazın</span>
+    💬
+  </a>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hero parallax + load
+    const hero = document.getElementById('hero');
+    hero.classList.add('loaded');
+
+    // Mobile menu
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.add('open');
+    });
+    document.getElementById('mobile-close').addEventListener('click', closeMobile);
+    function closeMobile() {
+      document.getElementById('mobile-menu').classList.remove('open');
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), 0);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // Form submit
+    function submitForm() {
+      document.getElementById('res-form-container').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+
+    // Smooth hash scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
