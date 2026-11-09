@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Portal</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body { margin: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #000; font-family: sans-serif; overflow: hidden; }
+
+        /* Dijital Saat Stili */
+        #timer { 
+            font-family: 'Courier New', monospace;
+            font-size: 15rem; 
+            color: #ff5722; 
+            font-weight: bold; 
+            letter-spacing: 20px; 
+            z-index: 10;
+            text-shadow: 0 0 20px #ff5722;
+        }
+
+        /* 3D Balon Stili */
+        .balloon-float { 
+            position: absolute; 
+            bottom: -150px; 
+            width: 60px; 
+            height: 75px; 
+            border-radius: 50% 50% 45% 45%; 
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), rgba(0,0,0,0.1));
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.3);
+            animation: float 6s linear infinite; 
+            z-index: -1; 
+            display: none; 
+        }
+        .balloon-float::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 2px;
+            height: 30px;
+            background: #fff;
+        }
+        @keyframes float { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(-110vh) rotate(5deg); } }
+
+        #content { display: none; text-align: center; }
+        #cake { font-size: 200px; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    </style>
+</head>
+<body>
+
+    <div id="timer">00:00:10</div>
+    <div id="content">
+        <h1 style="color: #ff5722; font-size: 5rem;">Happy Birthday!</h1>
+        <div id="cake">🎂</div>
+    </div>
+
+    <audio id="bg-music" src="mebrure.mp3" loop></audio>
+
+    <script>
+        let seconds = 10;
+        const timerEl = document.getElementById('timer');
+        const contentEl = document.getElementById('content');
+        const audio = document.getElementById('bg-music');
+
+        function activateFloatingBalloons() {
+            const colors = ['#ff5252', '#ff80ab', '#448aff', '#ffea00'];
+            for(let i=0; i<30; i++) {
+                let b = document.createElement('div');
+                b.className = 'balloon-float';
+                b.style.display = 'block';
+                b.style.left = Math.random() * 100 + 'vw';
+                b.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                b.style.animationDelay = Math.random() * 6 + 's';
+                document.body.appendChild(b);
+            }
+        }
+
+        const interval = setInterval(() => {
+            seconds--;
+            timerEl.innerText = `00:00:${seconds.toString().padStart(2, '0')}`;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                timerEl.style.display = 'none';
+                contentEl.style.display = 'block';
+                activateFloatingBalloons();
+                confetti({ particleCount: 300, spread: 180, origin: { y: 0.5 } });
+                audio.play().catch(() => document.body.addEventListener('click', () => audio.play(), { once: true }));
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
